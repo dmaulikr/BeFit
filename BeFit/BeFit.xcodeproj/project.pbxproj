@@ -13,6 +13,7 @@
 		524FF6C31DD3AE33009BB0BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524FF6C21DD3AE33009BB0BE /* Assets.xcassets */; };
 		524FF6C61DD3AE33009BB0BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524FF6C41DD3AE33009BB0BE /* LaunchScreen.storyboard */; };
 		524FF6D11DD3AE33009BB0BE /* BeFitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FF6D01DD3AE33009BB0BE /* BeFitTests.swift */; };
+		524FF6DC1DD3AE8B009BB0BE /* BeFit logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 524FF6DB1DD3AE8B009BB0BE /* BeFit logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		524FF6CC1DD3AE33009BB0BE /* BeFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeFitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		524FF6D01DD3AE33009BB0BE /* BeFitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeFitTests.swift; sourceTree = "<group>"; };
 		524FF6D21DD3AE33009BB0BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524FF6DB1DD3AE8B009BB0BE /* BeFit logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BeFit logo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				524FF6BB1DD3AE32009BB0BE /* AppDelegate.swift */,
 				524FF6BD1DD3AE32009BB0BE /* ViewController.swift */,
 				524FF6BF1DD3AE33009BB0BE /* Main.storyboard */,
+				524FF6DB1DD3AE8B009BB0BE /* BeFit logo.png */,
 				524FF6C21DD3AE33009BB0BE /* Assets.xcassets */,
 				524FF6C41DD3AE33009BB0BE /* LaunchScreen.storyboard */,
 				524FF6C71DD3AE33009BB0BE /* Info.plist */,
@@ -179,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524FF6DC1DD3AE8B009BB0BE /* BeFit logo.png in Resources */,
 				524FF6C61DD3AE33009BB0BE /* LaunchScreen.storyboard in Resources */,
 				524FF6C31DD3AE33009BB0BE /* Assets.xcassets in Resources */,
 				524FF6C11DD3AE33009BB0BE /* Main.storyboard in Resources */,
