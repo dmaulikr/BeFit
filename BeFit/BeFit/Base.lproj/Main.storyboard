@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="storyboard_registration" id="BYZ-38-t0r" customClass="RegistrationViewController" customModule="BeFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -54,7 +54,7 @@
                                     <color key="titleColor" red="0.99255877733230591" green="0.97243362665176392" blue="0.97649604082107544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rab-Yh-cJ9" kind="presentation" identifier="loginView" id="X0D-Qf-abA"/>
+                                    <action selector="btnLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ecX-ew-aad"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O31-tf-x5L">
@@ -71,19 +71,27 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.99255877733230591" green="0.97243362665176392" blue="0.97649604082107544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnRegisterClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Px9-XX-BkQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.57059782743453979" green="0.77717441320419312" blue="0.17306408286094666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="FXw-Rm-MjA" id="qmK-wN-82I"/>
+                        <outlet property="txtPassword" destination="fF2-V9-R4d" id="qZK-WQ-L1x"/>
+                        <outlet property="txtUsername" destination="5Lj-WM-ZVs" id="fxV-5H-Y6M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="549" y="-121"/>
+            <point key="canvasLocation" x="690" y="-135"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="TeU-8w-jLU">
             <objects>
-                <viewController id="rab-Yh-cJ9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="storyboard_login" id="rab-Yh-cJ9" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ku8-MW-4rZ"/>
                         <viewControllerLayoutGuide type="bottom" id="zhl-rM-Y7n"/>
