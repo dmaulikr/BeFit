@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeFit/RegistrationViewController.swift"
-            timestampString = "500509554.786604"
+            timestampString = "500573036.243236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "displayAlertMessage(userMessage:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "btnRegisterClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

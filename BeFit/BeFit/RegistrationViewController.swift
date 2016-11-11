@@ -41,8 +41,21 @@ class RegistrationViewController: UIViewController {
             
             return;
         }
+        
+        //send data to server
+        var request = URLRequest(url: URL(string: "http://befitapp.esy.es/register.php")!);
+        request.httpMethod = "POST";
+        
+        let postString = "email=\(userEmail!)&username=\(userUsername!)&password=\(userPassword!)";
+        
+        request.httpBody = postString.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request)
+        
+        
+        task.resume()
+        
     }
-    
     // click on button Login
     @IBAction func btnLoginClick(_ sender: Any)
     {
@@ -51,7 +64,7 @@ class RegistrationViewController: UIViewController {
     
     func displayAlertMessage (userMessage:String)
     {
-        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert);
+        let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert);
         
         let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil);
         
