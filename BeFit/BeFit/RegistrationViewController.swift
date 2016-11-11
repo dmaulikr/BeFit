@@ -37,8 +37,7 @@ class RegistrationViewController: UIViewController {
         if (userEmail == "" || userUsername == "" || userPassword == "")
         {
             //display alert message
-            displayAlertMessage(userMessage: "All fields are required!")
-            
+            displayAlertMessage(userMessage: "All fields are required!", status: "error")
             return;
         }
         
@@ -51,9 +50,40 @@ class RegistrationViewController: UIViewController {
         request.httpBody = postString.data(using: .utf8)
         
         let task = URLSession.shared.dataTask(with: request)
+        { data, response, error in
+            
+            //response from the server
+            let responseString = String(data: data!, encoding: .utf8)
+            print("responseString = \(responseString!)")
+            
+            //parsing server response to JSON
+                do {
+                    
+                    let parsedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
+                    
+                    
+                    //print(parsedData)
+                    
+                    //registration status and description
+                    let registrationStatus = parsedData["status"] as! String
+                    print("parsedData - status: = \(registrationStatus)")
+                    
+                    let registrationDescription = parsedData["description"] as! String
+                    print("parsedData - description: = \(registrationDescription)")
+                    
+                    DispatchQueue.main.async {
+                        self.displayAlertMessage(userMessage: registrationDescription, status: registrationStatus)
+                    }
+                } catch let error as NSError {
+                    print(error)
+                }
+            
+            
         
-        
+        }
         task.resume()
+        
+        //display message of success or error
         
     }
     // click on button Login
@@ -62,15 +92,33 @@ class RegistrationViewController: UIViewController {
         self.dismiss(animated: true, completion: nil);
     }
     
-    func displayAlertMessage (userMessage:String)
+    //function for displaying a message
+    func displayAlertMessage (userMessage:String, status:String)
     {
-        let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert);
+        //if status == error stay on registration form and display error message
+        if (status == "error")
+        {
+            let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert);
+            
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil);
+            
+            myAlert.addAction(okAction);
+            
+            self .present(myAlert, animated: true, completion: nil);
+        }
+        else //if status == success display message and redirect to login form
+        {
+            let myAlert = UIAlertController(title: "Information", message: userMessage, preferredStyle: UIAlertControllerStyle.alert);
+            
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil);
+            
+            myAlert.addAction(okAction);
+            
+            self.present(myAlert, animated: true, completion: nil);
+        }
         
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil);
         
-        myAlert.addAction(okAction);
         
-        self .present(myAlert, animated: true, completion: nil);
         
         
     }
