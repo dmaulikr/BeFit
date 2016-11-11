@@ -71,6 +71,7 @@ class RegistrationViewController: UIViewController {
                     let registrationDescription = parsedData["description"] as! String
                     print("parsedData - description: = \(registrationDescription)")
                     
+                    //display message of success or error
                     DispatchQueue.main.async {
                         self.displayAlertMessage(userMessage: registrationDescription, status: registrationStatus)
                     }
@@ -83,7 +84,6 @@ class RegistrationViewController: UIViewController {
         }
         task.resume()
         
-        //display message of success or error
         
     }
     // click on button Login
@@ -110,16 +110,17 @@ class RegistrationViewController: UIViewController {
         {
             let myAlert = UIAlertController(title: "Information", message: userMessage, preferredStyle: UIAlertControllerStyle.alert);
             
-            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil);
-            
-            myAlert.addAction(okAction);
-            
             self.present(myAlert, animated: true, completion: nil);
+            
+            //show message about successful registration for 3 seconds and then redirect to login screen
+            let when = DispatchTime.now() + 3
+            DispatchQueue.main.asyncAfter(deadline: when){
+                //code with delay
+                myAlert.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+            }
+        
         }
-        
-        
-        
-        
         
     }
     

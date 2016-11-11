@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BeFit/RegistrationViewController.swift"
-            timestampString = "500594415.193026"
+            timestampString = "500595668.352582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "btnRegisterClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
