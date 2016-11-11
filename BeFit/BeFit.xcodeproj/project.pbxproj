@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		521ACA5E1DD4C48D000990C1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521ACA5D1DD4C48D000990C1 /* RegistrationViewController.swift */; };
+		521ACA601DD5334E000990C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521ACA5F1DD5334E000990C1 /* LoginViewController.swift */; };
 		524FF6BC1DD3AE32009BB0BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FF6BB1DD3AE32009BB0BE /* AppDelegate.swift */; };
 		524FF6BE1DD3AE32009BB0BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FF6BD1DD3AE32009BB0BE /* ViewController.swift */; };
 		524FF6C11DD3AE33009BB0BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524FF6BF1DD3AE33009BB0BE /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		521ACA5D1DD4C48D000990C1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		521ACA5F1DD5334E000990C1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		524FF6B81DD3AE32009BB0BE /* BeFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524FF6BB1DD3AE32009BB0BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524FF6BD1DD3AE32009BB0BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				524FF6C41DD3AE33009BB0BE /* LaunchScreen.storyboard */,
 				524FF6C71DD3AE33009BB0BE /* Info.plist */,
 				521ACA5D1DD4C48D000990C1 /* RegistrationViewController.swift */,
+				521ACA5F1DD5334E000990C1 /* LoginViewController.swift */,
 			);
 			path = BeFit;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521ACA601DD5334E000990C1 /* LoginViewController.swift in Sources */,
 				521ACA5E1DD4C48D000990C1 /* RegistrationViewController.swift in Sources */,
 				524FF6BE1DD3AE32009BB0BE /* ViewController.swift in Sources */,
 				524FF6BC1DD3AE32009BB0BE /* AppDelegate.swift in Sources */,

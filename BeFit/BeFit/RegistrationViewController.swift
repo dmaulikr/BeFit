@@ -46,7 +46,7 @@ class RegistrationViewController: UIViewController {
     // click on button Login
     @IBAction func btnLoginClick(_ sender: Any)
     {
-        
+        self.dismiss(animated: true, completion: nil);
     }
     
     func displayAlertMessage (userMessage:String)

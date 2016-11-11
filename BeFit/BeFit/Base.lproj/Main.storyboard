@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="690" y="-135"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="TeU-8w-jLU">
             <objects>
-                <viewController storyboardIdentifier="storyboard_login" id="rab-Yh-cJ9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="storyboard_login" id="rab-Yh-cJ9" customClass="LoginViewController" customModule="BeFit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ku8-MW-4rZ"/>
                         <viewControllerLayoutGuide type="bottom" id="zhl-rM-Y7n"/>
@@ -144,10 +144,17 @@
                                     <color key="titleColor" red="0.99255877733230591" green="0.97243362665176392" blue="0.97649604082107544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.99255877733230591" green="0.97243362665176392" blue="0.97649604082107544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnLoginClicked:" destination="rab-Yh-cJ9" eventType="touchUpInside" id="ZZO-9x-YBp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.57059782743453979" green="0.77717441320419312" blue="0.17306408286094666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="txtPassword" destination="JGo-pt-JJ2" id="x99-hP-jho"/>
+                        <outlet property="txtUsername" destination="KfG-1J-Jt0" id="fb2-Cj-cla"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEX-1o-jIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
