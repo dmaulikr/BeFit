@@ -29,7 +29,35 @@ class LoginViewController: UIViewController {
         let userUsername = txtUsername.text;
         let userPassword = txtPassword.text;
         
-        
+        //check for empty fields
+        if (userUsername == "" || userPassword == ""){
+            displayAlertMessage(userMessage: "All fields are required", status: "error")
+            return;
+        }
+    }
+    
+    //function for displaying a message
+    func displayAlertMessage(userMessage:String, status:String)
+    {
+        //if status == error 
+        if (status == "error")
+        {
+            let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+            
+            myAlert.addAction(okAction)
+            
+            self.present(myAlert, animated: true, completion: nil)
+        }
+        else //if status == succcess
+        {
+            let myAlert = UIAlertController(title: "Information", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+            
+            self.present(myAlert, animated: true, completion: nil)
+            
+            //dodati preusmjeravanje na pocetnu stranicu aplikacije
+        }
     }
 
     /*
