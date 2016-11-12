@@ -34,6 +34,45 @@ class LoginViewController: UIViewController {
             displayAlertMessage(userMessage: "All fields are required", status: "error")
             return;
         }
+        
+        //send data to server
+        var request = URLRequest(url: URL(string: "http://befitapp.esy.es/login.php")!);
+        request.httpMethod = "POST";
+        
+        let postString = "username=\(userUsername!)&password=\(userPassword!)";
+        request.httpBody = postString.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request)
+        { data, response, error in
+            
+            //response form the server
+            let responseString = String(data: data!, encoding: .utf8)
+            print("responseString = \(responseString!)")
+            
+            //parsing server response to JSON
+            do {
+                
+                let parsedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
+                
+                //print (parsedData)
+                
+                //login status end description
+                let loginStatus = parsedData["status"] as! String
+                print("parsedData - status: = \(loginStatus)")
+                
+                let loginDescription = parsedData["description"] as! String
+                print("parsedData - description: = \(loginDescription)")
+                
+                //display message of success or error
+                DispatchQueue.main.async {
+                    self.displayAlertMessage(userMessage: loginDescription, status: loginStatus)
+                }
+                
+            } catch let error as NSError {
+            print(error)
+            }
+        }
+        task.resume();
     }
     
     //function for displaying a message
@@ -55,6 +94,13 @@ class LoginViewController: UIViewController {
             let myAlert = UIAlertController(title: "Information", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
             
             self.present(myAlert, animated: true, completion: nil)
+            
+            //show message about successful login for 1 second and the redirect to main screen
+            let duration = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: duration){
+                //code with delay
+                myAlert.dismiss(animated: true, completion: nil)
+            }
             
             //dodati preusmjeravanje na pocetnu stranicu aplikacije
         }

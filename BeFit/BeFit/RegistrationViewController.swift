@@ -113,7 +113,7 @@ class RegistrationViewController: UIViewController {
             self.present(myAlert, animated: true, completion: nil);
             
             //show message about successful registration for 3 seconds and then redirect to login screen
-            let when = DispatchTime.now() + 3
+            let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when){
                 //code with delay
                 myAlert.dismiss(animated: true, completion: nil)
