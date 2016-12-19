@@ -9,13 +9,13 @@
 import UIKit
 
 class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
-    var user = User();
     @IBOutlet var fullUserNametxt: UITextField!
     @IBOutlet var userDoBdp: UIDatePicker!
     @IBOutlet var userCountrysb: UIPickerView!
     @IBOutlet var usesrHeighttxt: UITextField!
     @IBOutlet var userWeighttxt: UITextField!
+    @IBOutlet var maleBtn: UIButton!
+    @IBOutlet var femaleBtn: UIButton!
     
     var countries:[String] = [String]();
     override func viewDidLoad() {
@@ -28,7 +28,13 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         self.userCountrysb.dataSource = self
         countries=["Croatia", "Slovenia", "USA", "Mexico", "Spain", "Portugal", "United Kingdom", "Austria", "Colombia", "Venezuela", "Costa Rica", "China"];
         
-        // Do any additional setup after loading the view.
+        if(user.gender=="F"){
+            maleBtn.backgroundColor = UIColor.clear;
+            femaleBtn.backgroundColor=UIColor.white;
+        }else{
+            maleBtn.backgroundColor = UIColor.white;
+            femaleBtn.backgroundColor=UIColor.clear;
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +54,16 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return countries[row]
+    }
+    @IBAction func maleBtnClick(_ sender: Any) {
+        maleBtn.backgroundColor = UIColor.white;
+        femaleBtn.backgroundColor=UIColor.clear;
+        user.gender = "M";
+    }
+    @IBAction func femaleBtnClick(_ sender: Any) {
+        maleBtn.backgroundColor = UIColor.clear;
+        femaleBtn.backgroundColor=UIColor.white;
+        user.gender = "F";
     }
     /*
     // MARK: - Navigation

@@ -9,6 +9,7 @@
 import UIKit
 
 var userLoggedIn : Bool = false;
+var user:User=User();
 
 class ViewController: UIViewController {
 

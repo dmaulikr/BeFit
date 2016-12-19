@@ -91,20 +91,10 @@ class LoginViewController: UIViewController {
         }
         else //if status == succcess
         {
-            let myAlert = UIAlertController(title: "Information", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
-            
-            self.present(myAlert, animated: true, completion: nil)
-            
-            //global variable type of bool declared in ViewController.swift 
+            //user is logged in
             userLoggedIn = true;
-            
-            //show message about successful login for 1 second and the redirect to main screen
-            let duration = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: duration){
-                //code with delay
-                myAlert.dismiss(animated: true, completion: nil)
-                self.dismiss(animated: true, completion: nil)
-            }
+            //close login screen
+            self.dismiss(animated: true, completion: nil)
             
         }
     }
