@@ -14,10 +14,11 @@ class User {
     var fullUserName:String = "Angel";
     var gender:String = "";
     var userDOB:Date=Date.init(timeIntervalSinceNow: 100000);
+    var userCountry:String = "";
     var userWeight:Int = 0;
     var userHeight:Int = 0;
     var userGoalWeight:Int = 0;
-    var selectedProgram:Int = 0;
+    var selectedProgram:Int = 1;
     
     func autenthicateUser(usrname:String, pass:String) -> (String,String) {
         //user login

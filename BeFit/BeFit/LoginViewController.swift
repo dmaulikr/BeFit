@@ -63,6 +63,10 @@ class LoginViewController: UIViewController {
                 let loginDescription = parsedData["description"] as! String
                 print("parsedData - description: = \(loginDescription)")
                 
+                if(loginStatus=="success"){
+                    user.userID=parsedData["user"] as! String
+                }
+                
                 //display message of success or error
                 DispatchQueue.main.async {
                     self.displayAlertMessage(userMessage: loginDescription, status: loginStatus)
