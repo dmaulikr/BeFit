@@ -63,6 +63,10 @@ class LoginViewController: UIViewController {
                 let loginDescription = parsedData["description"] as! String
                 print("parsedData - description: = \(loginDescription)")
                 
+                if(loginStatus=="success"){
+                    user.userID=parsedData["user"] as! String
+                }
+                
                 //display message of success or error
                 DispatchQueue.main.async {
                     self.displayAlertMessage(userMessage: loginDescription, status: loginStatus)
@@ -91,6 +95,7 @@ class LoginViewController: UIViewController {
         }
         else //if status == succcess
         {
+<<<<<<< HEAD
             let myAlert = UIAlertController(title: "Information", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
             
             self.present(myAlert, animated: true, completion: nil)
@@ -100,6 +105,12 @@ class LoginViewController: UIViewController {
             
             //redirect to main screen
             performSegue(withIdentifier: "tab_controller", sender: nil)
+=======
+            //user is logged in
+            userLoggedIn = true;
+            //close login screen
+            self.dismiss(animated: true, completion: nil)
+>>>>>>> dba101d7fe7309dfcdfa356796f8ab52aaedc32a
             
         }
     }

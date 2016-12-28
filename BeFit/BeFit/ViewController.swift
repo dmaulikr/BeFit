@@ -8,6 +8,12 @@
 
 import UIKit
 
+<<<<<<< HEAD
+=======
+var userLoggedIn : Bool = false;
+var user:User=User();
+
+>>>>>>> dba101d7fe7309dfcdfa356796f8ab52aaedc32a
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
