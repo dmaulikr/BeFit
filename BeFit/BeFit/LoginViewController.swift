@@ -95,16 +95,11 @@ class LoginViewController: UIViewController {
             
             self.present(myAlert, animated: true, completion: nil)
             
-            //global variable type of bool declared in ViewController.swift 
+            //global variable type of bool declared in TabViewController.swift 
             userLoggedIn = true;
             
-            //show message about successful login for 1 second and the redirect to main screen
-            let duration = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: duration){
-                //code with delay
-                myAlert.dismiss(animated: true, completion: nil)
-                self.dismiss(animated: true, completion: nil)
-            }
+            //redirect to main screen
+            performSegue(withIdentifier: "tab_controller", sender: nil)
             
         }
     }
