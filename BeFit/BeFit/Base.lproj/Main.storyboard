@@ -160,6 +160,51 @@
             </objects>
             <point key="canvasLocation" x="1804" y="-122.78860569715144"/>
         </scene>
+        <!--Diary Table View Controller-->
+        <scene sceneID="nPY-TD-8YE">
+            <objects>
+                <tableViewController id="r2o-HL-AxJ" customClass="DiaryTableViewController" customModule="BeFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tVe-OK-GnB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellMeal" textLabel="yix-JI-qQS" detailTextLabel="oXB-95-SOp" style="IBUITableViewCellStyleValue1" id="7kg-6a-A4f">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7kg-6a-A4f" id="fzi-iE-RG1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yix-JI-qQS">
+                                            <rect key="frame" x="15" y="11" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oXB-95-SOp">
+                                            <rect key="frame" x="316" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="r2o-HL-AxJ" id="O1u-N4-uYU"/>
+                            <outlet property="delegate" destination="r2o-HL-AxJ" id="Dlj-tI-Ltg"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="lXj-Rh-H7a"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SoY-GS-Gow" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236" y="606"/>
+        </scene>
         <!--UserProfile View Controller-->
         <scene sceneID="6Dw-WB-0g4">
             <objects>
@@ -306,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1j-aC-duP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844" y="532.98350824587715"/>
+            <point key="canvasLocation" x="703" y="606"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="H4J-oh-Ned">
@@ -379,6 +424,7 @@
                     <connections>
                         <segue destination="BGz-Ty-kko" kind="relationship" relationship="viewControllers" id="4lJ-3S-WqD"/>
                         <segue destination="3Wd-bP-lKK" kind="relationship" relationship="viewControllers" id="O8M-jC-Ard"/>
+                        <segue destination="r2o-HL-AxJ" kind="relationship" relationship="viewControllers" id="EA8-Fi-eH8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obw-np-O4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
