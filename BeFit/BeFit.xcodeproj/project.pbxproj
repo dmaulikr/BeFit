@@ -18,7 +18,6 @@
 		524FF6DC1DD3AE8B009BB0BE /* BeFit logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 524FF6DB1DD3AE8B009BB0BE /* BeFit logo.png */; };
 		528CB8861E070A9B00201958 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528CB8851E070A9B00201958 /* User.swift */; };
 		52D3BA181E04882300ED758A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3BA171E04882300ED758A /* UserProfileViewController.swift */; };
-		52D7AFA11E17293400F7372B /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D7AFA01E17293400F7372B /* DiaryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +46,6 @@
 		524FF6DB1DD3AE8B009BB0BE /* BeFit logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BeFit logo.png"; sourceTree = "<group>"; };
 		528CB8851E070A9B00201958 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		52D3BA171E04882300ED758A /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		52D7AFA01E17293400F7372B /* DiaryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +98,6 @@
 				524FF6C71DD3AE33009BB0BE /* Info.plist */,
 				521ACA5D1DD4C48D000990C1 /* RegistrationViewController.swift */,
 				521ACA5F1DD5334E000990C1 /* LoginViewController.swift */,
-				52D7AFA01E17293400F7372B /* DiaryTableViewController.swift */,
 			);
 			path = BeFit;
 			sourceTree = "<group>";
@@ -218,7 +215,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D7AFA11E17293400F7372B /* DiaryTableViewController.swift in Sources */,
 				521ACA601DD5334E000990C1 /* LoginViewController.swift in Sources */,
 				52D3BA181E04882300ED758A /* UserProfileViewController.swift in Sources */,
 				528CB8861E070A9B00201958 /* User.swift in Sources */,
