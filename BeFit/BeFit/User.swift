@@ -11,9 +11,9 @@ import Foundation
 class User {
     var userID:String = "";
     var userName:String = "";
-    var fullUserName:String = "Angel";
+    var fullUserName:String = "";
     var gender:String = "";
-    var userDOB:Date=Date.init(timeIntervalSinceNow: 100000);
+    var userDOB:Date=Date.init(timeIntervalSinceNow: 0);
     var userCountry:String = "";
     var userWeight:Int = 0;
     var userHeight:Int = 0;
