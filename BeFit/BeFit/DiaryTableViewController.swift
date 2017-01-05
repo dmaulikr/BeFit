@@ -21,7 +21,7 @@ class DiaryTableViewController: UITableViewController {
         super.viewDidLoad()
         
         //get users meals
-        var request = URLRequest(url: URL(string: "http://befitapp.esy.es/foods/getfoodrecordbyuser.php")!);
+        var request = URLRequest(url: URL(string: "http://befitapp.esy.es/foods/getfoodrecordsbyuser.php")!);
         request.httpMethod = "POST";
         
         let postString = "userid=\(user.userID)";
@@ -47,16 +47,22 @@ class DiaryTableViewController: UITableViewController {
                 
                 
                 if(mealsStatus=="success"){
-                    if let mealsList = parsedData["description"] {
-                        for index in 0...mealsList.count {
-                            let aObject = mealsList[index] as! [String :AnyObject]
-                            
-                            self.meals.append(aObject["foodName"] as! String);
-                            self.caloriesMeals.append(aObject["cal"] as! String);
-                        }
+                    let mealsList = parsedData["description"] as! [AnyObject];
+                    print("parsedData - description: =\(mealsList)");
+                
+                
+                print("parsedData - prvi zapis: =\(mealsList[0])");
+                    for meal in mealsList {
+                        let mealName = meal["foodName"] as! String;
+                        self.meals.append(mealName);
+                        
+                        let mealCalories = meal["cal"] as! String;
+                        self.caloriesMeals.append(mealCalories);
+                        print("meal - name: =\(mealName)");
+                        
+                        self.tableView.reloadData();
                     }
                 }
-                
                 
             } catch let error as NSError {
                 print(error)
