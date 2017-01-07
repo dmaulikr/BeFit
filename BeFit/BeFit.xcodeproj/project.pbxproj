@@ -18,6 +18,8 @@
 		524FF6DC1DD3AE8B009BB0BE /* BeFit logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 524FF6DB1DD3AE8B009BB0BE /* BeFit logo.png */; };
 		528CB8861E070A9B00201958 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528CB8851E070A9B00201958 /* User.swift */; };
 		52A0CE631E1D2C3500FB1614 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0CE621E1D2C3500FB1614 /* DiaryTableViewController.swift */; };
+		52A0CE691E201A3F00FB1614 /* AddNewMealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0CE681E201A3F00FB1614 /* AddNewMealTableViewCell.swift */; };
+		52A0CE6D1E216EF500FB1614 /* DailyCalorieMeterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0CE6C1E216EF500FB1614 /* DailyCalorieMeterTableViewCell.swift */; };
 		52D3BA181E04882300ED758A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3BA171E04882300ED758A /* UserProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		524FF6DB1DD3AE8B009BB0BE /* BeFit logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BeFit logo.png"; sourceTree = "<group>"; };
 		528CB8851E070A9B00201958 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		52A0CE621E1D2C3500FB1614 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
+		52A0CE681E201A3F00FB1614 /* AddNewMealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewMealTableViewCell.swift; sourceTree = "<group>"; };
+		52A0CE6C1E216EF500FB1614 /* DailyCalorieMeterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyCalorieMeterTableViewCell.swift; sourceTree = "<group>"; };
 		52D3BA171E04882300ED758A /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +105,8 @@
 				521ACA5D1DD4C48D000990C1 /* RegistrationViewController.swift */,
 				521ACA5F1DD5334E000990C1 /* LoginViewController.swift */,
 				52A0CE621E1D2C3500FB1614 /* DiaryTableViewController.swift */,
+				52A0CE681E201A3F00FB1614 /* AddNewMealTableViewCell.swift */,
+				52A0CE6C1E216EF500FB1614 /* DailyCalorieMeterTableViewCell.swift */,
 			);
 			path = BeFit;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 				52D3BA181E04882300ED758A /* UserProfileViewController.swift in Sources */,
 				528CB8861E070A9B00201958 /* User.swift in Sources */,
 				521ACA5E1DD4C48D000990C1 /* RegistrationViewController.swift in Sources */,
+				52A0CE6D1E216EF500FB1614 /* DailyCalorieMeterTableViewCell.swift in Sources */,
+				52A0CE691E201A3F00FB1614 /* AddNewMealTableViewCell.swift in Sources */,
 				524FF6BE1DD3AE32009BB0BE /* ViewController.swift in Sources */,
 				524FF6BC1DD3AE32009BB0BE /* AppDelegate.swift in Sources */,
 			);

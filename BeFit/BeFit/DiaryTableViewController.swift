@@ -11,11 +11,11 @@ import UIKit
 class DiaryTableViewController: UITableViewController {
     
     
-    var sections = ["Meals", "Exercises"];
+    var sections = ["Daily calorie meter", "Meals","Add new Meal", "Exercises", "Add new Exercise"];
     var meals = [String]();
     var caloriesMeals = [String]();
-    var exercises = ["trčanje", "plivanje", "trbušnjaci", "sklekovi", "nogomet"];
-    var caloriesExercises = ["150", "300", "100", "120", "450"];
+    var exercises = ["trčanje", "plivanje", "nogomet"];
+    var caloriesExercises = ["150", "300", "450"];
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,8 @@ class DiaryTableViewController: UITableViewController {
                 print(error)
             }
         }
-        task.resume();        // Uncomment the following line to preserve selection between presentations
+        task.resume();
+        // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -84,7 +85,18 @@ class DiaryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         // return the title for each section
-        return self.sections[section];
+        if (section == 1 || section == 3){
+            return self.sections[section];
+        }
+        return nil;
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (section == 0 || section == 1 || section == 3){
+            return 60.0;
+        }
+
+        return 0;
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -94,30 +106,67 @@ class DiaryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows for each section
-        if section == 0 {
+        if section == 1 {
             return self.meals.count;
         }
-        else {
+        else if section == 3{
             return self.exercises.count;
         }
+        else {
+            return 1;
+        }
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 140.0;
+        }
+        else {
+            return UITableViewAutomaticDimension;
+        }
+    }
+    
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        // Configure the cell...
-        if indexPath.section == 0 {
+        
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellDailyCalorieMeter", for: indexPath) as! DailyCalorieMeterTableViewCell;
+            
+            cell.labelDailyGoaltxt.text = "Daily Goal";
+            cell.labelMealstxt.text = "Meals";
+            cell.labelExercisetxt.text = "Exercise";
+            cell.labelRemainingtxt.text = "Remaining";
+            
+            cell.labelCounterDailyGoal.text = "2500";
+            cell.labelCounterMeals.text = "1020";
+            cell.labelCounterExercise.text = "480";
+            cell.labelCounterRemaining.text = "1960";
+            
+            return cell;
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.textLabel?.text = meals[indexPath.row];
             cell.detailTextLabel?.text = caloriesMeals[indexPath.row];
-        }
-        else {
+            return cell;
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellAddNewMeal", for: indexPath) as! AddNewMealTableViewCell;
+            cell.labelAddNew.text = "+ Add New Meal";
+            return cell;
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.textLabel?.text = exercises[indexPath.row];
             cell.detailTextLabel?.text = caloriesExercises[indexPath.row];
+            return cell;
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellAddNewMeal", for: indexPath) as! AddNewMealTableViewCell;
+            cell.labelAddNew.text = "+ Add New Exercise";
+            return cell;
         }
-
-        return cell
+        
     }
+    
     
 
     /*
