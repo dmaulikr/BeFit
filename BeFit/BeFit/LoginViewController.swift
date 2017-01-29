@@ -14,7 +14,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
+        txtUsername.text="markokoprivnjak";
+        txtPassword.text="markokoprivnjak";
 
         // Do any additional setup after loading the view.
     }

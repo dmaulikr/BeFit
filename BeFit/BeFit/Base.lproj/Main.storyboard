@@ -288,12 +288,17 @@
                                     <action selector="saveChangesBtnClick:" destination="3Wd-bP-lKK" eventType="touchUpInside" id="c0g-xb-i5d"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Eqe-lZ-573">
+                                <rect key="frame" x="161" y="316" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.5706249475479126" green="0.77687293291091919" blue="0.17476719617843628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="9mq-gE-hgH"/>
                     <connections>
                         <outlet property="SaveChangesBtn" destination="9wN-rg-TXi" id="lK4-Ra-wTn"/>
+                        <outlet property="actIndicator" destination="Eqe-lZ-573" id="pcv-xq-yfk"/>
                         <outlet property="femaleBtn" destination="W4G-Py-qoQ" id="9QQ-Dv-uXB"/>
                         <outlet property="fullUserNametxt" destination="BaA-eJ-Rcy" id="iWy-YU-60j"/>
                         <outlet property="goalWeighttxt" destination="nUK-5U-Hxh" id="UzL-0U-llo"/>
@@ -307,6 +312,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1j-aC-duP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="631" y="635"/>
+        </scene>
+        <!--Stats View Controller-->
+        <scene sceneID="jqE-pf-mql">
+            <objects>
+                <viewController id="526-E4-YLN" customClass="StatsViewController" customModule="BeFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vKL-6Z-GoY"/>
+                        <viewControllerLayoutGuide type="bottom" id="KF0-cd-Ek8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GQK-ao-IE9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.5706249475479126" green="0.77687293291091919" blue="0.17476719617843628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="cdl-CU-bdP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vtt-ON-VLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1290" y="635"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="H4J-oh-Ned">
@@ -380,6 +404,7 @@
                         <segue destination="BGz-Ty-kko" kind="relationship" relationship="viewControllers" id="4lJ-3S-WqD"/>
                         <segue destination="3Wd-bP-lKK" kind="relationship" relationship="viewControllers" id="O8M-jC-Ard"/>
                         <segue destination="9jt-7B-diI" kind="relationship" relationship="viewControllers" id="Z9M-k9-N3p"/>
+                        <segue destination="526-E4-YLN" kind="relationship" relationship="viewControllers" id="dBw-nX-1KC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obw-np-O4T" userLabel="First Responder" sceneMemberID="firstResponder"/>

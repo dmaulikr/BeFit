@@ -14,11 +14,11 @@ class DiaryTableViewController: UITableViewController {
     var sections = ["Daily calorie meter", "Meals","Add new Meal", "Exercises", "Add new Exercise"];
     var meals = [String]();
     var caloriesMeals = [String]();
-    var exercises = ["trčanje", "plivanje", "nogomet"];
-    var caloriesExercises = ["150", "300", "450"];
+    var exercises = [String]();
+    var caloriesExercises = [String]();
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
         
         //get users meals
         var request = URLRequest(url: URL(string: "http://befitapp.esy.es/foods/getfoodrecordsbyuser.php")!);
@@ -69,6 +69,57 @@ class DiaryTableViewController: UITableViewController {
             }
         }
         task.resume();
+        
+        //get user activities
+        var requestActivities = URLRequest(url: URL(string: "http://befitapp.esy.es/activities/actbyuser.php")!);
+        requestActivities.httpMethod = "POST";
+        
+        let postStringActivities = "userid=\(user.userID)";
+        requestActivities.httpBody = postStringActivities.data(using: .utf8)
+        
+        let taskActivities = URLSession.shared.dataTask(with: requestActivities)
+        { data, response, error in
+            
+            //response form the server
+            let responseString = String(data: data!, encoding: .utf8)
+            print("responseString = \(responseString!)")
+            
+            //parsing server response to JSON
+            do {
+                
+                let parsedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:AnyObject]
+                
+                //print (parsedData)
+                
+                //activities status end description
+                let activitiesStatus = parsedData["status"] as! String
+                print("parsedData - status: = \(activitiesStatus)")
+                
+                
+                if(activitiesStatus=="success"){
+                    let activitiesList = parsedData["description"] as! [AnyObject];
+                    print("parsedData - description: =\(activitiesList)");
+                    
+                    
+                    print("parsedData - prvi zapis: =\(activitiesList[0])");
+                    for activity in activitiesList {
+                        let activityName = activity["actName"] as! String;
+                        self.exercises.append(activityName);
+                        
+                        let activityCalories = activity["cal"] as! String;
+                        self.caloriesExercises.append(activityCalories);
+                        print("meal - name: =\(activityName)");
+                        
+                        self.tableView.reloadData();
+                    }
+                }
+                
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+        taskActivities.resume();
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

@@ -10,6 +10,8 @@ import UIKit
 
 class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet var fullUserNametxt: UITextField!
+    
+    @IBOutlet weak var actIndicator: UIActivityIndicatorView!
     @IBOutlet var userDoBdp: UIDatePicker!
     @IBOutlet var userCountrysb: UIPickerView!
     @IBOutlet var usesrHeighttxt: UITextField!
@@ -22,6 +24,7 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        actIndicator.startAnimating()
         var request = URLRequest(url: URL(string: "http://befitapp.esy.es/userdetails.php")!);
         request.httpMethod = "POST";
         let postString = "userid=\(user.userID)";
@@ -50,6 +53,7 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
                     dateForm.dateFormat = "yyyy-MM-dd";
                     user.userDOB = dateForm.date(from: userD)!;
                     user.userDOB = user.userDOB+3601
+                    
                     user.userCountry=parsedData["country"] as! String
                     let userH = parsedData["height"] as! String
                     user.userHeight = Int(userH)!
@@ -57,9 +61,8 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
                     user.userWeight = Int(userW)!
                     let userG = parsedData["goal"] as! String
                     user.userGoalWeight = Int(userG)!
-                    
                 }
-                
+                self.actIndicator.stopAnimating();
                 self.showUserData();
                 
             } catch let error as NSError {
@@ -115,8 +118,9 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let indexDrzave = countries.index(of: user.userCountry);
         userCountrysb.selectRow(indexDrzave!, inComponent: 0, animated: true);
         goalWeighttxt.text = String(user.userGoalWeight)
+        
         //userDoBdp.date=user.userDOB;
-
+        
     }
     func saveData(){
         //save values from fields to user variables
@@ -146,27 +150,14 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         request.httpMethod = "POST";
         let postString = "fullname=\(user.fullUserName)&weight=\(user.userWeight)&height=\(user.userWeight)&goalweight=\(user.userGoalWeight)&programid=\(user.selectedProgram)&userid=\(user.userID)&country=\(user.userCountry)&dob=\(userDOBStringani)&gender=\(user.gender)";
         request.httpBody = postString.data(using: .utf8)
-        print(postString)
-        
         let task = URLSession.shared.dataTask(with: request)
         { data, response, error in
-            
-            //response form the server
-            let responseString = String(data: data!, encoding: .utf8)
-            print("responseString = \(responseString!)")
-            
-            //parsing server response to JSON
             do {
                 
                 let parsedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
+                let dataStatus = parsedData["status"] as! String
                 
-                //print (parsedData)
-                
-                //login status end description
-                let loginStatus = parsedData["status"] as! String
-                print("parsedData - status: = \(loginStatus)")
-                
-                if(loginStatus=="success"){
+                if(dataStatus=="success"){
                     
                 }
                 

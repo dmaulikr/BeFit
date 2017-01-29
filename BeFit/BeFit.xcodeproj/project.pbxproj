@@ -20,6 +20,7 @@
 		52A0CE631E1D2C3500FB1614 /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0CE621E1D2C3500FB1614 /* DiaryTableViewController.swift */; };
 		52A0CE691E201A3F00FB1614 /* AddNewMealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0CE681E201A3F00FB1614 /* AddNewMealTableViewCell.swift */; };
 		52A0CE6D1E216EF500FB1614 /* DailyCalorieMeterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A0CE6C1E216EF500FB1614 /* DailyCalorieMeterTableViewCell.swift */; };
+		52C7A8DE1E3B26650047500C /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7A8DD1E3B26650047500C /* StatsViewController.swift */; };
 		52D3BA181E04882300ED758A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3BA171E04882300ED758A /* UserProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		52A0CE621E1D2C3500FB1614 /* DiaryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
 		52A0CE681E201A3F00FB1614 /* AddNewMealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewMealTableViewCell.swift; sourceTree = "<group>"; };
 		52A0CE6C1E216EF500FB1614 /* DailyCalorieMeterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyCalorieMeterTableViewCell.swift; sourceTree = "<group>"; };
+		52C7A8DD1E3B26650047500C /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		52D3BA171E04882300ED758A /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 				524FF6BD1DD3AE32009BB0BE /* ViewController.swift */,
 				528CB8851E070A9B00201958 /* User.swift */,
 				524FF6BF1DD3AE33009BB0BE /* Main.storyboard */,
+				52C7A8DD1E3B26650047500C /* StatsViewController.swift */,
 				52D3BA171E04882300ED758A /* UserProfileViewController.swift */,
 				524FF6DB1DD3AE8B009BB0BE /* BeFit logo.png */,
 				524FF6C21DD3AE33009BB0BE /* Assets.xcassets */,
@@ -232,6 +235,7 @@
 				52A0CE6D1E216EF500FB1614 /* DailyCalorieMeterTableViewCell.swift in Sources */,
 				52A0CE691E201A3F00FB1614 /* AddNewMealTableViewCell.swift in Sources */,
 				524FF6BE1DD3AE32009BB0BE /* ViewController.swift in Sources */,
+				52C7A8DE1E3B26650047500C /* StatsViewController.swift in Sources */,
 				524FF6BC1DD3AE32009BB0BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
